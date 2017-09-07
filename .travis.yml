@@ -19,7 +19,6 @@ matrix:
   allow_failures:
 
 before_install:
-    # - env
     - pwd
     - if [[ -v CC ]]; then printenv CC; fi
     - if [[ -v CXX ]]; then printenv CXX; fi
@@ -45,5 +44,6 @@ before_install:
 script:
     - gfortran-7 --version
     - gfortran --version
+    - env
 
 # after_success:
