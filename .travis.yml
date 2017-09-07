@@ -1,6 +1,6 @@
 ---
 sudo: false
-language: fortran
+language: c # fortran
 
 addons:
     apt:
@@ -21,21 +21,16 @@ matrix:
 before_install:
     - pwd
     - if [[ -v CC ]]; then printenv CC; fi
-    - if [[ -v CXX ]]; then printenv CXX; fi
     - if [[ -x `which gcc` ]]; then gcc --version; fi
-    - if [[ -x `which g++` ]]; then g++ --version; fi
-    - if [[ -x `which gcc-7` ]]; then gcc-7 --version; CC=gcc-7; fi
-    - if [[ -x `which g++-7` ]]; then g++-7 --version; CXX=g++-7; fi
-    - if [[ -x `which gcc-6` ]]; then gcc-6 --version; CC=gcc-6; fi
-    - if [[ -x `which g++-6` ]]; then g++-6 --version; CXX=g++-6; fi
-    - if [[ -x `which gcc-5` ]]; then gcc-5 --version; CC=gcc-5; fi
-    - if [[ -x `which g++-5` ]]; then g++-5 --version; CXX=g++-5; fi
-    - if [[ -x `which gcc-4.9` ]]; then gcc-4.9 --version; CC=gcc-4.9; fi
-    - if [[ -x `which g++-4.9` ]]; then g++-4.9 --version; CXX=g++-4.9; fi
-    - if [[ -v CC ]]; then printenv CC; fi
-    - if [[ -v CXX ]]; then printenv CXX; fi
-    - if [[ -x `which $CC` ]]; then $CC --version; fi
-    - if [[ -x `which $CXX` ]]; then $CXX --version; fi
+    - if [[ -x `which gfortran` ]]; then gfortran --version; fi
+    - if [[ -x `which gcc-7` ]]; then gcc-7 --version; fi
+    - if [[ -x `which gfortran-7` ]]; then gfortran-7 --version; fi
+    - if [[ -x `which gcc-6` ]]; then gcc-6 --version; fi
+    - if [[ -x `which gfortran-6` ]]; then gfortran-6 --version; fi
+    - if [[ -x `which gcc-5` ]]; then gcc-5 --version; fi
+    - if [[ -x `which gfortran-5` ]]; then gfortran-5 --version; fi
+    - if [[ -x `which gcc-4.9` ]]; then gcc-4.9 --version; fi
+    - if [[ -x `which gfortran-4.9` ]]; then gfortran-4.9 --version; fi
 
 # install:
 
