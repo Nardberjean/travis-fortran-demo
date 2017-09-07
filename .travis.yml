@@ -38,7 +38,6 @@ before_install:
 
 script:
     - gfortran-7 --version
-    - gfortran --version
     - env
 
 # after_success:
